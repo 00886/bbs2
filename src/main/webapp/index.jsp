@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%--<script>
-    window.location.href='<c:out value="/index.html"/>';
-</script>--%>
-hello world
+<script>
+    window.location.href='<c:out value="login.jsp"/>';
+</script>
+
 
