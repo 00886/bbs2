@@ -36,6 +36,7 @@
                     org.hibernate.dialect.MySQL57Dialect
                 </prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <prop key="format_sql">true</prop>
                 <!--<prop key="hbm2ddl.auto">create</prop>
                 <prop key="hibernate.cache.use_second_level_cache">true</prop>
                 <prop key="hibernate.cache.region.factory_class">
@@ -61,6 +62,7 @@
             <tx:method name="reg*" propagation="REQUIRED" read-only="false" />
             <tx:method name="update*" propagation="REQUIRED" read-only="false" />
             <tx:method name="delete*" propagation="REQUIRED" read-only="false" />
+            <tx:method name="login*" propagation="REQUIRED" read-only="false" />
         </tx:attributes>
     </tx:advice>
     <aop:config proxy-target-class="true">

@@ -10,6 +10,14 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("#reg").click(function(){
+                window.location.href="register.html";
+            });
+        });
+    </script>
 </head>
 <body>
 <form method="post" action='<c:out value="login.html"/>'>
@@ -21,7 +29,7 @@
             <td>密&nbsp;&nbsp;&nbsp码：</td><td><input type="text" name="password"></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="登陆"></td>
+            <td colspan="2" style="text-align: right"><input id="reg" type="button" value="注册"><input type="submit" value="登陆"></td>
         </tr>
     </table>
 </form>

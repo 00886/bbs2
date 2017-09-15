@@ -42,9 +42,10 @@ public class UserServiceImpl implements UserService {
         }else if(dbUser.getLocked()==1){           //是否锁定用户
             System.out.println("3该用户已锁定，暂时无法登陆");
         }else{
-            user.setLast_ip(request.getLocalAddr());
-            user.setLast_visit(new Date());
-            loginSuccess(user);
+            dbUser.setUser_id(dbUser.getUser_id());
+            dbUser.setLast_ip(request.getRemoteAddr());
+            dbUser.setLast_visit(new Date());
+            loginSuccess(dbUser);
         }
     }
     //登陆成功
@@ -76,5 +77,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
+    }
+    @Autowired
+    public void setLoginLogDao(LoginLogDao loginLogDao) {
+        this.loginLogDao = loginLogDao;
     }
 }
